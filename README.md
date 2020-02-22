@@ -15,7 +15,7 @@ sensor:
     monitored_conditions:         # 可选
       - VPS_STATE                 # 可选，VPS运行状态
       - CURRENT_BANDWIDTH_USED    # 可选，流量情况
-      - CURRENT_USED              # 可选，流量数据
+      - CURRENT_BWG_USED          # 可选，流量数据
       - RAM_USED                  # 可选，已用内存
       - DISK_USED                 # 可选，已用硬盘
       - SWAP_USED                 # 可选，已用SWAP

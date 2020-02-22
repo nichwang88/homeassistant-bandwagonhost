@@ -21,7 +21,7 @@ MONITORED_CONDITIONS = {
     'VPS_STATE' : ['Vps State','','mdi:cloud-search'],
     'CURRENT_BANDWIDTH_USED': ['Current Bandwidth Used', '',
                                   'mdi:cloud-tags'],
-    'CURRENT_USED': ['Current Used', '',
+    'CURRENT_BWG_USED': ['Current BWG Used', '',
                                   'mdi:cloud-tags'],
     'DISK_USED': ['DISK USED', '', 'mdi:disc'],
     'RAM_USED':['RAM USED', '', 'mdi:responsive'],
@@ -132,7 +132,7 @@ class BandwagonHostSensor(Entity):
 
             if self._condition == 'CURRENT_BANDWIDTH_USED':
                 self._state = str(round(json_obj['data_counter']/1024/1024/1024,2)) + 'GB/' + str(round(json_obj['plan_monthly_data']/1024/1024/1024,0)) + 'GB'
-            elif self._condition == 'CURRENT_USED':
+            elif self._condition == 'CURRENT_BWG_USED':
                 self._state = str(round(json_obj['data_counter']/1024/1024/1024,2))
             elif self._condition == 'DISK_USED':
                 self._state = str(round(json_obj['ve_used_disk_space_b']/1024/1024/1024,2)) + 'GB/' + str(round(json_obj['plan_disk']/1024/1024/1024,0)) + 'GB'
