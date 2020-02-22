@@ -132,7 +132,7 @@ class BandwagonHostSensor(Entity):
 
             if self._condition == 'CURRENT_BANDWIDTH_USED':
                 self._state = str(round(json_obj['data_counter']/1024/1024/1024,2)) + 'GB/' + str(round(json_obj['plan_monthly_data']/1024/1024/1024,0)) + 'GB'
-            if self._condition == 'CURRENT_USED':
+            elif self._condition == 'CURRENT_USED':
                 self._state = str(round(json_obj['data_counter']/1024/1024/1024,2))
             elif self._condition == 'DISK_USED':
                 self._state = str(round(json_obj['ve_used_disk_space_b']/1024/1024/1024,2)) + 'GB/' + str(round(json_obj['plan_disk']/1024/1024/1024,0)) + 'GB'
