@@ -6,7 +6,7 @@
 
 再将本项目中bandwagonhost目录下所有文件复制到上述文件夹下
 
-## 配置 
+## 配置
 ```yaml
 sensor:
   - platform: bandwagonhost
@@ -16,6 +16,7 @@ sensor:
       - VPS_STATE                 # 可选，VPS运行状态
       - CURRENT_BANDWIDTH_USED    # 可选，流量情况
       - CURRENT_BWG_USED          # 可选，流量数据
+      - TOTAL_BANDWIDTH           # 可选，流量总量
       - RAM_USED                  # 可选，已用内存
       - DISK_USED                 # 可选，已用硬盘
       - SWAP_USED                 # 可选，已用SWAP
