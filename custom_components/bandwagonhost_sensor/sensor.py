@@ -21,6 +21,8 @@ MONITORED_CONDITIONS = {
     'VPS_STATE' : ['Vps State','','mdi:cloud-search'],
     'CURRENT_BANDWIDTH_USED': ['Current Bandwidth Used', '',
                                   'mdi:cloud-tags'],
+    'CURRENT_USED': ['Current Used', '',
+                                  'mdi:cloud-tags'],
     'DISK_USED': ['DISK USED', '', 'mdi:disc'],
     'RAM_USED':['RAM USED', '', 'mdi:responsive'],
     'SWAP_USED':['SWAP USED', '', 'mdi:responsive'],
@@ -61,7 +63,7 @@ async def async_setup_platform(hass, config, async_add_entities,
 class BandwagonHostSensor(Entity):
 
     def __init__(self,sensor_name,veid, api_key, condition):
-        
+
         if(sensor_name == '搬瓦工状态'):
             sensor_name = condition.replace('ATTR_','').replace('_', ' ')
         else:
@@ -130,6 +132,8 @@ class BandwagonHostSensor(Entity):
 
             if self._condition == 'CURRENT_BANDWIDTH_USED':
                 self._state = str(round(json_obj['data_counter']/1024/1024/1024,2)) + 'GB/' + str(round(json_obj['plan_monthly_data']/1024/1024/1024,0)) + 'GB'
+            if self._condition == 'CURRENT_USED':
+                self._state = str(round(json_obj['data_counter']/1024/1024/1024,2))
             elif self._condition == 'DISK_USED':
                 self._state = str(round(json_obj['ve_used_disk_space_b']/1024/1024/1024,2)) + 'GB/' + str(round(json_obj['plan_disk']/1024/1024/1024,0)) + 'GB'
             elif self._condition == 'RAM_USED':
