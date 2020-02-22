@@ -26,7 +26,7 @@ MONITORED_CONDITIONS = {
     'SWAP_USED':['SWAP USED', '', 'mdi:responsive'],
 }
 
-SCAN_INTERVAL = timedelta(seconds=1200)
+SCAN_INTERVAL = timedelta(seconds=3600)
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_VEID): cv.string,
