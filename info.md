@@ -29,7 +29,7 @@ sensor:
 
 ## 效果示例
 
-![image](/Users/nicholas/Downloads/github/bandwagonhost/bandwagonhost.png)
+![image](bandwagonhost.png)
 
 ## 注意
 
