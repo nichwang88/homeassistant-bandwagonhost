@@ -1,0 +1,8 @@
+{
+  "domain": "bandwagonhost",
+  "name": "bandwagonhost",
+  "documentation": "https://github.com/nichwang88/bandwagonhost",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": ["requests"]
+}
